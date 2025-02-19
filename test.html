@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline Interactive</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            text-align: center; 
+        }
+        #timeline 
+        {
+            width: 100%; 
+            height: 150px; 
+            background: #f4f4f4; 
+            overflow-x: scroll; 
+            white-space: nowrap; 
+        }
+        .event 
+        { 
+            display: inline-block; 
+            padding: 10px; 
+            margin: 10px; 
+            background: #007bff; 
+            color: white; 
+            border-radius: 5px; 
+            cursor: pointer; 
+        }
+        #map 
+        { 
+            height: 493px; 
+            margin-top: 20px; 
+        }
+        #details 
+        { 
+            padding: 20px; 
+            background: #ddd; 
+            min-height: 150px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Timeline Interactive</h1>
+    <div id="timeline"></div>
+    <div id="details">Cliquez sur un événement pour voir les détails.</div>
+    <div id="map"></div>
+    
+    <script>
+        const events = [
+            { date: "10 juillet 1943", title: "Débarquement allié en Sicile", lat: 37.6, lon: 14.0, details: "Opération Husky, début de la libération de l'Italie." },
+            { date: "6 juin 1944", title: "Débarquement en Normandie", lat: 49.4, lon: -0.8, details: "Opération Overlord, tournant décisif en Europe." },
+            { date: "25 août 1944", title: "Libération de Paris", lat: 48.8566, lon: 2.3522, details: "La capitale française est libérée après des combats intenses." },
+            { date: "8 mai 1945", title: "Capitulation de l'Allemagne", lat: 52.52, lon: 13.405, details: "Fin de la guerre en Europe, célébrée comme le VE Day." }
+        ];
+
+        const timeline = d3.select("#timeline");
+        events.forEach(event => {
+            timeline.append("div")
+                .attr("class", "event")
+                .text(event.date + " - " + event.title)
+                .on("click", () => showDetails(event));
+        });
+
+        const map = L.map('map').setView([48.8566, 2.3522], 5);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        function showDetails(event) {
+            document.getElementById("details").innerHTML = `<h3>${event.title}</h3><p>${event.details}</p>`;
+            map.setView([event.lat, event.lon], 6);
+            L.marker([event.lat, event.lon]).addTo(map).bindPopup(event.title).openPopup();
+        }
+    </script>
+</body>
+</html>
