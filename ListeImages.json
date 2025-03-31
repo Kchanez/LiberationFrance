@@ -1,0 +1,87 @@
+{
+    "Marseille": {
+      "images": [
+        {"ref": "TERRE 271-6110", "description": "Cérémonie militaire dans Marseille libérée : défilé motorisé des unités de la 1re armée", "src": "chemin/vers/marseille1.jpg"},
+        {"ref": "TERRE 271-6089", "description": "Défilé des tirailleurs après la libération de Marseille", "src": "chemin/vers/marseille2.jpg"},
+        {"ref": "TERRE 270-6014", "description": "Combat de rue à Marseille", "src": "chemin/vers/marseille3.jpg"},
+        {"ref": "TERRE 276-6386", "description": "Un reporter du SCA discute avec un circulateur dans Marseille libérée", "src": "chemin/vers/marseille4.jpg"},
+        {"ref": "TERRE 299-7115", "description": "Légionnaire du 1er REC, ou du RMLE, à bord d'un bâtiment LST s'approchant du port de Marseille", "src": "chemin/vers/marseille5.jpg"},
+        {"ref": "TERRE 270-6064", "description": "Reddition des troupes allemandes présentes dans l'ouvrage du Foresta, dans la banlieue nord de Marseille", "src": "chemin/vers/marseille6.jpg"}
+      ],
+      "video": {
+        "ref": "ACT 161",
+        "description": "Le débarquement de Provence : la libération de Marseille.",
+        "src": "chemin/vers/marseille_video.mp4"
+      }
+    },
+    "Strasbourg": {
+      "images": [
+        {"ref": "TERRE 357", "description": "Bataille d'Alsace : la 2e DB entre Benfeld et Sélestat", "src": "chemin/vers/strasbourg1.jpg"},
+        {"ref": "TERRE 359", "description": "Bataille d'Alsace : combats de la 1re DB pour la libération de Mulhouse", "src": "chemin/vers/strasbourg2.jpg"},
+        {"ref": "TERRE 374", "description": "Section d'observation aérienne et avance de la 2e DB sur Witternheim (Bas-Rhin)", "src": "chemin/vers/strasbourg3.jpg"},
+        {"ref": "TERRE 327-7833", "description": "Retrouvailles entre les combattants et leurs familles pendant la campagne de libération de l'Alsace", "src": "chemin/vers/strasbourg4.jpg"},
+        {"ref": "TERRE 327-7827", "description": "Retrouvailles entre les soldats et leurs familles pendant la campagne de libération de l'Alsace", "src": "chemin/vers/strasbourg5.jpg"}
+      ],
+      "video": {
+        "ref": "ACT 205",
+        "description": "Libération de Strasbourg.",
+        "src": "chemin/vers/strasbourg_video.mp4"
+      }
+    },
+    "Le Havre": {
+      "images": [
+        {"ref": "MARINE 127-1490", "description": "Photo du port du Havre après la libération", "src": "chemin/vers/Havre1.jpg"},
+        {"ref": "MARINE 127-1489", "description": "Navires alliés accostant au Havre", "src": "chemin/vers/Havre2.jpg"},
+        {"ref": "MARINE 127-1488", "description": "Débarquement de troupes alliées au Havre", "src": "chemin/vers/Havre3.jpg"},
+        {"ref": "MARINE 127-1494", "description": "Vue aérienne du Havre en 1944", "src": "chemin/vers/Havre4.jpg"},
+        {"ref": "MARINE 127-1493", "description": "Troupes en mouvement sur les quais du Havre", "src": "chemin/vers/Havre5.jpg"}
+      ],
+      "video": {
+        "ref": "SA 49",
+        "description": "Libération de Strasbourg.",
+        "src": "chemin/vers/Havre_video.mp4"
+      }
+    },
+    "Caen": {
+      "images": [
+        {"ref": "TERRE 10537-G14", "description": "Débarquement américain à Caen", "src": "chemin/vers/Caen1.jpg"},
+        {"ref": "TERRE 10537-L15", "description": "Combats de rue à Caen", "src": "chemin/vers/Caen2.jpg"},
+        {"ref": "TERRE 10537-G6", "description": "Forces alliées avançant à travers les ruines de Caen", "src": "chemin/vers/Caen3.jpg"},
+        {"ref": "TERRE 10537-G5", "description": "Prisonniers allemands capturés à Caen", "src": "chemin/vers/Caen4.jpg"},
+        {"ref": "TERRE 10537-G13", "description": "Char Sherman avançant dans les rues de Caen", "src": "chemin/vers/Caen5.jpg"}
+      ],
+      "video": {
+        "ref": "SA 931", 
+        "description": "Débarquement à Caen.", 
+        "src": "chemin/vers/caen_video.mp4"
+    }
+    },
+    "Paris": {
+      "images": [
+        {"ref": "D0392-021-001-0001", "description": "Entrée des forces françaises dans Paris libéré", "src": "chemin/vers/Paris1.jpg"},
+        {"ref": "D0392-021-001-0004", "description": "Célébrations sur les Champs-Élysées", "src": "chemin/vers/Paris2.jpg"},
+        {"ref": "D0392-021-001-0005", "description": "Foule en liesse dans Paris libéré", "src": "chemin/vers/Paris3.jpg"},
+        {"ref": "D0392-021-001-0006", "description": "Combats de rue pendant la libération de Paris", "src": "chemin/vers/Paris4.jpg"},
+        {"ref": "D0392-021-001-0003", "description": "Forces alliées accueillies par la population parisienne", "src": "chemin/vers/Paris5.jpg"}
+      ],
+      "video": {
+        "ref": "ACT 1486", 
+        "description": "Libération de Paris.", 
+        "src": "chemin/vers/paris_video.mp4"
+        }
+    },
+    "Lyon": {
+      "images": [
+        {"ref": "TERRE 308-7311", "description": "Résistants accueillant les troupes alliées à Lyon", "src": "chemin/vers/Lyon1.jpg"},
+        {"ref": "TERRE 308-7306", "description": "Défilé de la libération à Lyon", "src": "chemin/vers/Lyon2.jpg"},
+        {"ref": "AIR 202-3745", "description": "Vue aérienne de Lyon après la libération", "src": "chemin/vers/Lyon3.jpg"},
+        {"ref": "AIR 202-3744", "description": "Bombardements alliés sur des positions ennemies à Lyon", "src": "chemin/vers/Lyon4.jpg"},
+        {"ref": "TERRE 306", "description": "Rencontre entre les forces alliées et la Résistance à Lyon", "src": "chemin/vers/Lyon5.jpg"}
+      ],
+      "video": {
+        "ref": "ACT 134", 
+        "description": "La libération de Lyon", 
+        "src": "url_vers_video"
+        }
+    }
+  }
