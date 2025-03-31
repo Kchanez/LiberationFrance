@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline Interactive</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #F4EDE5;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100px;
+        }
+        .container {
+            position: relative;
+            max-width: 800px;
+            padding: 20px;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: normal;
+        }
+        .title em {
+            font-style: italic;
+            font-weight: bold;
+        }
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+        }
+        .map {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+            z-index: 0;
+        }
+        .character {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            width: 200px;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/logo.png" alt="Logo" class="logo">
+    <div class="container">
+        <h1 class="title">La libération aux côtés de <em>photographes</em> de guerre</h1>
+        <p class="subtitle">Revivez la Libération avec les photographes de guerre</p>
+        <img src="map-placeholder.png" alt="Carte de la France" class="map">
+    </div>
+    <img src="images/photographe.png" alt="Soldat illustré" class="character">
+    <div class="footer">Touche l’écran interactif pour retourner dans le temps.</div>
+</body>
+</html>
