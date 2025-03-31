@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-between;
+            min-height: 1080px;
+            background-color: #f4f4f4;
+            position: relative;
+        }
+        .logo {
+            width:100%;
+            min-height: 100px;
+        }
+        .carte {
+            position: relative;
+            min-width: 20%;
+            height: 500px;
+            top: 100%;
+            left: -12%;
+        }
+        .region {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        /* Ajuste les positions des SVG */
+        .region1 { top: 2%; left: -3%; }
+        .region2 { top: 56%; left: -14%; }
+        .region3 { top: 57%; left: -91%; }
+        .region4 { top: 52%; left: 52%; rotate: 3deg; }
+        .region5 { top: 130%; left: -40%; rotate: 5deg; }
+        .region6 { top: 148%; left: 37%; rotate: 7deg; }
+        .region7 { top: 210%; left: 140%; }
+        .Barre {
+            min-width: 4%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            background-color: #3D5467;
+            color: #FFF;
+        }
+        a {
+            color: #FFF;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .timeline {
+            position: absolute;
+            left: 5%;
+            top: 12%;
+            width: 200px;
+            height: 100vh;
+            /* background: rgba(0, 0, 0, 0.8); */
+            color: white;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+        .timeline img {
+            width: 80%;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .timeline .image-container {
+            text-align: center;
+        }
+        .timeline .image-container p {
+            color: black;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .close {
+            color: black;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .popup {
+            display: none;
+            height: 100vh;
+            min-width: 480px;
+            position: absolute;
+            top: 0%;
+            left: 84%;
+            transform: translate(-45%, 0%);
+            background-color: rgba(255, 255, 255, 0.809);
+            padding: 20px;
+            text-align: center;
+        }
+        .popup img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 5px;
+        }
+        .popup .close-popup {
+            cursor: pointer;
+            color: rgb(0, 0, 0);
+            font-size: 18px;
+            margin-top: 10px;
+            position: absolute;
+            top: 2%;
+            left: 5%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="logo" src="./Logo/logo.svg" alt="Logo">
+    </header>
+    
+    <div class="carte">
+        <img src="./CarteFrance/Vector 1.svg" class="region region1" alt="Région 1">
+        <img src="./CarteFrance/Vector 2.svg" class="region region2" alt="Région 2">
+        <img src="./CarteFrance/Vector 3.svg" class="region region3" alt="Région 3">
+        <img src="./CarteFrance/Vector 4.svg" class="region region4" alt="Région 4">
+        <img src="./CarteFrance/Vector 5.svg" class="region region5" alt="Région 5">
+        <img src="./CarteFrance/Vector 6.svg" class="region region6" alt="Région 6">
+        <img src="./CarteFrance/Vector 7.svg" class="region region7" alt="Région 7">
+    </div>
+
+    <div class="Barre">
+        <a href="#" onclick="showTimeline(1943)"> 1943 </a> 
+        <a href="#" onclick="showTimeline(1944)"> 1944 </a>  
+        <a href="#" onclick="showTimeline(1945)"> 1945 </a>  
+    </div>
+    
+    <div class="timeline" id="timeline">
+        <span class="close" onclick="hideTimeline()">&times;</span>
+        <div id="timeline-content"></div>
+    </div>
+    
+    <div class="popup" id="popup">
+       
+        <img id="popup-img" src="" alt="Zoomed Image">
+        <span class="close-popup" onclick="closePopup()">&times;</span>
+        <h3 id="popup-titre"></h3>
+        <p id="popup-text"></p>
+    </div>
+    
+    <script>
+        const images = {
+            1943: [ {src: './images/6856509_4_1.jpg', titre: 'Image 1943' , text: "Description de l'image 1943"}, {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'Seconde image de 1943'}],
+            1944: [{src: './images/6856509_4_1.jpg',titre: 'Image 1943' , text: "Description de l'image 1944"}],
+            1945: [{src: './images/TERRE-275-L6254-ret.jpg',titre: 'Image 1943' , text: "Description de l'image 1945"}]
+        };
+
+        function showTimeline(year) {
+            const timeline = document.getElementById("timeline");
+            const content = document.getElementById("timeline-content");
+            content.innerHTML = "";
+            
+            images[year].forEach(imgObj => {
+                const container = document.createElement("div");
+                container.classList.add("image-container");
+                
+                const imageElement = document.createElement("img");
+                imageElement.src = imgObj.src;
+                imageElement.alt = `Image de ${year}`;
+                imageElement.onclick = () => showPopup(imgObj.src, imgObj.text);
+                
+                const textElement = document.createElement("p");
+                textElement.innerText = imgObj.text;
+                
+                container.appendChild(imageElement);
+                container.appendChild(textElement);
+                content.appendChild(container);
+            });
+            
+            timeline.style.display = "flex";
+        }
+
+        function hideTimeline() {
+            document.getElementById("timeline").style.display = "none";
+        }
+
+        function showPopup(imageSrc, titre ,text) {
+            document.getElementById("popup-img").src = imageSrc;
+
+            document.getElementById("popup-titre").innerText = titre;
+            document.getElementById("popup-titre").style.textAlign = "left";
+
+            document.getElementById("popup-text").innerText = text;
+            document.getElementById("popup-text").style.textAlign = "left";
+
+            document.getElementById("popup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+</body>
+</html>
