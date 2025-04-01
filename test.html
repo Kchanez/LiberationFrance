@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
         body {
             display: flex;
             justify-content: space-between;
             min-height: 1080px;
-            background-color: #f4f4f4;
+            background-color: #CBD9E0;
             position: relative;
         }
         .logo {
-            width:100%;
+            width: 100%;
             min-height: 100px;
         }
         .carte {
@@ -28,6 +28,13 @@
             width: 100%;
             height: 100%;
         }
+        .region1 { top: 2%; left: -3%; }
+        .region2 { top: 56%; left: -14%; }
+        .region3 { top: 57%; left: -91%; }
+        .region4 { top: 52%; left: 52%; rotate: 3deg; }
+        .region5 { top: 130%; left: -40%; rotate: 5deg; }
+        .region6 { top: 148%; left: 37%; rotate: 7deg; }
+        .region7 { top: 210%; left: 140%; }
         .Barre {
             min-width: 4%;
             display: flex;
@@ -42,7 +49,22 @@
             color: #FFF;
             text-decoration: none;
             cursor: pointer;
+            min-width: 100%;
+            height: 33.33%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #fff ;
         }
+        a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .selected-year {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            padding: 5px;
+        }
+
         .timeline {
             position: absolute;
             left: 5%;
@@ -83,9 +105,9 @@
             min-width: 480px;
             position: absolute;
             top: 0%;
-            left: 84%;
+            left: 84.5%;
             transform: translate(-45%, 0%);
-            background-color: rgba(255, 255, 255, 0.809);
+            background-color: rgba(255, 255, 255, 0.2);
             padding: 20px;
             text-align: center;
         }
@@ -100,8 +122,15 @@
             font-size: 18px;
             margin-top: 10px;
             position: absolute;
-            top: 2%;
+            top: 1%;
             left: 5%;
+        }
+
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
         }
     </style>
 </head>
@@ -113,77 +142,110 @@
     <div class="carte">
         <img src="./CarteFrance/Vector 1.svg" class="region region1" alt="Région 1">
         <img src="./CarteFrance/Vector 2.svg" class="region region2" alt="Région 2">
+        <img src="./CarteFrance/Vector 3.svg" class="region region3" alt="Région 3">
+        <img src="./CarteFrance/Vector 4.svg" class="region region4" alt="Région 4">
+        <img src="./CarteFrance/Vector 5.svg" class="region region5" alt="Région 5">
+        <img src="./CarteFrance/Vector 6.svg" class="region region6" alt="Région 6">
+        <img src="./CarteFrance/Vector 7.svg" class="region region7" alt="Région 7">
     </div>
 
     <div class="Barre">
-        <a href="#" onclick="showTimeline(1943)"> 1943 </a> 
-        <a href="#" onclick="showTimeline(1944)"> 1944 </a>  
-        <a href="#" onclick="showTimeline(1945)"> 1945 </a>  
+        <a class="year-link" href="#" data-year="1943" onclick="showTimeline(1943)"> 1943 </a> 
+        <a class="year-link" href="#" data-year="1944" onclick="showTimeline(1944)"> 1944 </a>  
+        <a class="year-link" href="#" data-year="1945" onclick="showTimeline(1945)"> 1945 </a>  
     </div>
     
     <div class="timeline" id="timeline">
         <span class="close" onclick="hideTimeline()">&times;</span>
         <div id="timeline-content"></div>
+        <svg id="connections" width="100%" height="300"></svg> 
     </div>
     
     <div class="popup" id="popup">
-       
         <img id="popup-img" src="" alt="Zoomed Image">
         <span class="close-popup" onclick="closePopup()">&times;</span>
         <h3 id="popup-titre"></h3>
         <p id="popup-text"></p>
     </div>
-    
+
     <script>
         const images = {
-            1943: [ {src: './images/6856509_4_1.jpg', titre: 'Image 1943' , text: "Description de l'image 1943"}, {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'Seconde image de 1943'}],
-            1944: [{src: './images/6856509_4_1.jpg',titre: 'Image 1943' , text: "Description de l'image 1944"}],
-            1945: [{src: './images/TERRE-275-L6254-ret.jpg',titre: 'Image 1943' , text: "Description de l'image 1945"}]
+            1943: [ 
+                {src: './images/6856509_4_1.jpg', titre: 'Image 1943', text: "Description de l'image 1943", region: "region1"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943', text: 'Description 1943 à Paris', region: "region2"},
+                // Ajoute d'autres images pour 1943 ici
+            ],
+            1944: [
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1944', text: "Description de l'image 1944", region: "region3"},
+                // Ajoute d'autres images pour 1944 ici
+            ],
+            1945: [
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1945', text: "Description de l'image 1945", region: "region4"},
+                // Ajoute d'autres images pour 1945 ici
+            ]
+        };
+
+        const regionPositions = {
+            region1: { x: 100, y: 100 },
+            region2: { x: 200, y: 150 },
+            region3: { x: 300, y: 250 },
+            region4: { x: 400, y: 350 },
+            region5: { x: 500, y: 450 },
+            region6: { x: 600, y: 550 },
+            region7: { x: 700, y: 650 },
         };
 
         function showTimeline(year) {
-            const timeline = document.getElementById("timeline");
-            const content = document.getElementById("timeline-content");
-            content.innerHTML = "";
-            
-            images[year].forEach(imgObj => {
-                const container = document.createElement("div");
-                container.classList.add("image-container");
-                
-                const imageElement = document.createElement("img");
-                imageElement.src = imgObj.src;
-                imageElement.alt = `Image de ${year}`;
-                imageElement.onclick = () => showPopup(imgObj.src, imgObj.text);
-                
-                const textElement = document.createElement("p");
-                textElement.innerText = imgObj.text;
-                
-                container.appendChild(imageElement);
-                container.appendChild(textElement);
-                content.appendChild(container);
+            const timeline = document.getElementById('timeline');
+            const timelineContent = document.getElementById('timeline-content');
+            const connections = document.getElementById('connections');
+            timelineContent.innerHTML = ''; // Reset content
+            connections.innerHTML = ''; // Reset connections
+
+            // Affiche les images pour l'année sélectionnée
+            images[year].forEach(image => {
+                const imgElement = document.createElement('img');
+                imgElement.src = image.src;
+                imgElement.alt = image.titre;
+                imgElement.title = image.text;
+                imgElement.onclick = () => showPopup(image.src, image.titre, image.text);
+                timelineContent.appendChild(imgElement);
+
+                // Crée une ligne reliant l'image à la région
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                const regionPosition = regionPositions[image.region];
+                line.setAttribute('x1', imgElement.offsetLeft + imgElement.width / 2); // Position de l'image
+                line.setAttribute('y1', imgElement.offsetTop + imgElement.height / 2);
+                line.setAttribute('x2', regionPosition.x); // Position de la région
+                line.setAttribute('y2', regionPosition.y);
+                line.setAttribute('stroke', 'black');
+                line.setAttribute('stroke-width', '2');
+                connections.appendChild(line);
             });
-            
-            timeline.style.display = "flex";
+
+            timeline.style.display = 'flex';
         }
 
         function hideTimeline() {
-            document.getElementById("timeline").style.display = "none";
+            const timeline = document.getElementById('timeline');
+            timeline.style.display = 'none';
         }
 
-        function showPopup(imageSrc, titre ,text) {
-            document.getElementById("popup-img").src = imageSrc;
+        function showPopup(src, titre, text) {
+            const popup = document.getElementById('popup');
+            const popupImg = document.getElementById('popup-img');
+            const popupTitre = document.getElementById('popup-titre');
+            const popupText = document.getElementById('popup-text');
 
-            document.getElementById("popup-titre").innerText = titre;
-            document.getElementById("popup-titre").style.textAlign = "left";
-
-            document.getElementById("popup-text").innerText = text;
-            document.getElementById("popup-text").style.textAlign = "left";
-
-            document.getElementById("popup").style.display = "block";
+            popupImg.src = src;
+            popupTitre.textContent = titre;
+            popupText.textContent = text;
+            popup.style.display = 'block';
         }
 
         function closePopup() {
-            document.getElementById("popup").style.display = "none";
+            const popup = document.getElementById('popup');
+            popup.style.display = 'none';
         }
     </script>
 </body>
