@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
     <style>
         body {
@@ -57,6 +58,15 @@
             align-items: center;
             border-bottom: 1px solid #fff ;
         }
+        a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .selected-year {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            padding: 5px;
+        }
+
         .timeline {
             position: absolute;
             left: 5%;
@@ -136,9 +146,9 @@
     </div>
 
     <div class="Barre">
-        <a href="#" onclick="showTimeline(1943)"> 1943 </a> 
-        <a href="#" onclick="showTimeline(1944)"> 1944 </a>  
-        <a href="#" onclick="showTimeline(1945)"> 1945 </a>  
+        <a class="year-link" href="#" data-year="1943"onclick="showTimeline(1943)"> 1943 </a> 
+        <a class="year-link" href="#" data-year="1944"onclick="showTimeline(1944)"> 1944 </a>  
+        <a class="year-link" href="#" data-year="1945"onclick="showTimeline(1945)"> 1945 </a>  
     </div>
     
     <div class="timeline" id="timeline">
@@ -155,33 +165,68 @@
     
     <script>
         const images = {
-            1943: [ {src: './images/6856509_4_1.jpg', titre: 'Image 1943' , text: "lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen"}, {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen '}],
-            1944: [{src: './images/6856509_4_1.jpg',titre: 'Image 1944' , text: "lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen"}],
-            1945: [{src: './images/TERRE-275-L6254-ret.jpg',titre: 'Image 1945' , text: "lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen"}]
+            1943: [ 
+                {src: './images/6856509_4_1.jpg', titre: 'Image 1943' , text: "lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen", region: "Normandie" }, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen', region: "Paris" }, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Bretagne"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Paris"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Corse"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Alsace"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ',  region: "Normandie"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Marseille"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Marseille"}],
+            1944: [
+                {src: './images/6856509_4_1.jpg',titre: 'Image 1944' , text: "lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ',  region: "Paris" }, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Bretagne"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Corse"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ',  region: "Normandie"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Alsace"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Corse"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Marseille"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Paris"}],
+            1945: [
+                {src: './images/TERRE-275-L6254-ret.jpg',titre: 'Image 1945' , text: "lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen", region: "Normandie" }, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen',  region: "Paris" }, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Bretagne"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ' ,region: "Normandie"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ',  region: "Paris"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Alsace"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ',  region: "Paris"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen', region: "Marseille"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen', region: "Corse"}]
         };
 
         function showTimeline(year) {
             const timeline = document.getElementById("timeline");
             const content = document.getElementById("timeline-content");
             content.innerHTML = "";
-            
+
+            document.querySelectorAll(".year-link").forEach(link => {
+                link.classList.remove("selected-year");
+            });
+            const selectedLink = document.querySelector(`.year-link[data-year="${year}"]`);
+            if (selectedLink) {
+                selectedLink.classList.add("selected-year");
+            }
+
             images[year].forEach(imgObj => {
                 const container = document.createElement("div");
                 container.classList.add("image-container");
-                
+
                 const imageElement = document.createElement("img");
                 imageElement.src = imgObj.src;
                 imageElement.alt = `Image de ${year}`;
                 imageElement.onclick = () => showPopup(imgObj.src, imgObj.titre, imgObj.text);
-                //console.log(imgObj);
+
                 const textElement = document.createElement("p");
                 textElement.innerText = imgObj.titre;
-                
+
                 container.appendChild(imageElement);
                 container.appendChild(textElement);
                 content.appendChild(container);
             });
-            
+
             timeline.style.display = "flex";
         }
 
