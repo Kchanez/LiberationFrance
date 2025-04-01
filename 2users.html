@@ -9,7 +9,7 @@
             display: flex;
             justify-content: space-between;
             min-height: 1080px;
-            background-color: #f4f4f4;
+            background-color: #CBD9E0;
             position: relative;
         }
         .logo {
@@ -50,6 +50,12 @@
             color: #FFF;
             text-decoration: none;
             cursor: pointer;
+            min-width: 100%;
+            height: 33.33%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #fff ;
         }
         .timeline {
             position: absolute;
@@ -92,9 +98,9 @@
             min-width: 480px;
             position: absolute;
             top: 0%;
-            left: 84%;
+            left: 84.5%;
             transform: translate(-45%, 0%);
-            background-color: rgba(255, 255, 255, 0.809);
+            background-color: rgba(255, 255, 255, 0.2);
             padding: 20px;
             text-align: center;
         }
@@ -109,7 +115,7 @@
             font-size: 18px;
             margin-top: 10px;
             position: absolute;
-            top: 2%;
+            top: 1%;
             left: 5%;
         }
     </style>
@@ -141,7 +147,6 @@
     </div>
     
     <div class="popup" id="popup">
-       
         <img id="popup-img" src="" alt="Zoomed Image">
         <span class="close-popup" onclick="closePopup()">&times;</span>
         <h3 id="popup-titre"></h3>
@@ -150,9 +155,9 @@
     
     <script>
         const images = {
-            1943: [ {src: './images/6856509_4_1.jpg', titre: 'Image 1943' , text: "Description de l'image 1943"}, {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'Seconde image de 1943'}],
-            1944: [{src: './images/6856509_4_1.jpg',titre: 'Image 1943' , text: "Description de l'image 1944"}],
-            1945: [{src: './images/TERRE-275-L6254-ret.jpg',titre: 'Image 1943' , text: "Description de l'image 1945"}]
+            1943: [ {src: './images/6856509_4_1.jpg', titre: 'Image 1943' , text: "lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen"}, {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen '}],
+            1944: [{src: './images/6856509_4_1.jpg',titre: 'Image 1944' , text: "lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen"}],
+            1945: [{src: './images/TERRE-275-L6254-ret.jpg',titre: 'Image 1945' , text: "lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen"}]
         };
 
         function showTimeline(year) {
@@ -167,10 +172,10 @@
                 const imageElement = document.createElement("img");
                 imageElement.src = imgObj.src;
                 imageElement.alt = `Image de ${year}`;
-                imageElement.onclick = () => showPopup(imgObj.src, imgObj.text);
-                
+                imageElement.onclick = () => showPopup(imgObj.src, imgObj.titre, imgObj.text);
+                //console.log(imgObj);
                 const textElement = document.createElement("p");
-                textElement.innerText = imgObj.text;
+                textElement.innerText = imgObj.titre;
                 
                 container.appendChild(imageElement);
                 container.appendChild(textElement);
@@ -190,6 +195,7 @@
             document.getElementById("popup-titre").innerText = titre;
             document.getElementById("popup-titre").style.textAlign = "left";
 
+            //console.log(titre);
             document.getElementById("popup-text").innerText = text;
             document.getElementById("popup-text").style.textAlign = "left";
 
