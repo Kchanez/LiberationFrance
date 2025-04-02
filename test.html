@@ -75,17 +75,23 @@
             display: none;
             flex-direction: column;
             align-items: center;
-            padding-top: 20px;
+            padding-top: 30px;
+            text-align: center;
+        }
+        .timeline .image-container {
+            height: 20vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
         }
         .timeline img {
-            width: 80%;
+            width: 100%;
             margin: 10px 0;
             border-radius: 5px;
             cursor: pointer;
         }
-        .timeline .image-container {
-            text-align: center;
-        }
+        
         .timeline .image-container p {
             color: black;
             font-size: 14px;
@@ -158,7 +164,6 @@
     <div class="timeline" id="timeline">
         <span class="close" onclick="hideTimeline()">&times;</span>
         <div id="timeline-content"></div>
-        <svg id="connections" width="100%" height="300"></svg> 
     </div>
     
     <div class="popup" id="popup">
@@ -173,80 +178,135 @@
             1943: [ 
                 {src: './images/6856509_4_1.jpg', titre: 'Image 1943', text: "Description de l'image 1943", region: "region1"}, 
                 {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943', text: 'Description 1943 à Paris', region: "region2"},
+                {src: './images/6856509_4_1.jpg', titre: 'Image 1943', text: "Description de l'image 1943", region: "region1"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943', text: 'Description 1943 à Paris', region: "region2"},
+                {src: './images/6856509_4_1.jpg', titre: 'Image 1943', text: "Description de l'image 1943", region: "region1"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943', text: 'Description 1943 à Paris', region: "region2"},
                 // Ajoute d'autres images pour 1943 ici
             ],
             1944: [
                 {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1944', text: "Description de l'image 1944", region: "region3"},
+                {src: './images/6856509_4_1.jpg', titre: 'Image 1943', text: "Description de l'image 1943", region: "region1"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943', text: 'Description 1943 à Paris', region: "region2"},
+                {src: './images/6856509_4_1.jpg', titre: 'Image 1943', text: "Description de l'image 1943", region: "region1"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943', text: 'Description 1943 à Paris', region: "region2"},
                 // Ajoute d'autres images pour 1944 ici
             ],
             1945: [
                 {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1945', text: "Description de l'image 1945", region: "region4"},
+                {src: './images/6856509_4_1.jpg', titre: 'Image 1943', text: "Description de l'image 1943", region: "region1"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943', text: 'Description 1943 à Paris', region: "region2"},
+                {src: './images/6856509_4_1.jpg', titre: 'Image 1943', text: "Description de l'image 1943", region: "region1"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943', text: 'Description 1943 à Paris', region: "region2"},
+                {src: './images/6856509_4_1.jpg', titre: 'Image 1943', text: "Description de l'image 1943", region: "region1"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943', text: 'Description 1943 à Paris', region: "region2"},
                 // Ajoute d'autres images pour 1945 ici
             ]
         };
 
-        const regionPositions = {
-            region1: { x: 100, y: 100 },
-            region2: { x: 200, y: 150 },
-            region3: { x: 300, y: 250 },
-            region4: { x: 400, y: 350 },
-            region5: { x: 500, y: 450 },
-            region6: { x: 600, y: 550 },
-            region7: { x: 700, y: 650 },
-        };
+    function showTimeline(year) {
+        const timeline = document.getElementById("timeline");
+        const content = document.getElementById("timeline-content");
+        content.innerHTML = "";
 
-        function showTimeline(year) {
-            const timeline = document.getElementById('timeline');
-            const timelineContent = document.getElementById('timeline-content');
-            const connections = document.getElementById('connections');
-            timelineContent.innerHTML = ''; // Reset content
-            connections.innerHTML = ''; // Reset connections
+        document.querySelectorAll(".year-link").forEach(link => {
+            link.classList.remove("selected-year");
+        });
+        const selectedLink = document.querySelector(`.year-link[data-year="${year}"]`);
+        if (selectedLink) {
+            selectedLink.classList.add("selected-year");
+        }
 
-            // Affiche les images pour l'année sélectionnée
-            images[year].forEach(image => {
-                const imgElement = document.createElement('img');
-                imgElement.src = image.src;
-                imgElement.alt = image.titre;
-                imgElement.title = image.text;
-                imgElement.onclick = () => showPopup(image.src, image.titre, image.text);
-                timelineContent.appendChild(imgElement);
+        const imagesPerPage = 4; 
+        let currentPage = 0;
 
-                // Crée une ligne reliant l'image à la région
-                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-                const regionPosition = regionPositions[image.region];
-                line.setAttribute('x1', imgElement.offsetLeft + imgElement.width / 2); // Position de l'image
-                line.setAttribute('y1', imgElement.offsetTop + imgElement.height / 2);
-                line.setAttribute('x2', regionPosition.x); // Position de la région
-                line.setAttribute('y2', regionPosition.y);
-                line.setAttribute('stroke', 'black');
-                line.setAttribute('stroke-width', '2');
-                connections.appendChild(line);
+        const imageGroups = [];
+        for (let i = 0; i < images[year].length; i += imagesPerPage) {
+            imageGroups.push(images[year].slice(i, i + imagesPerPage));
+        }
+
+       function renderImages(page) {
+            content.innerHTML = "";
+
+            // Flèche haut (SVG)
+            if (page > 0) {
+                const upArrow = document.createElement("img");
+                upArrow.src = "./images/Flèches/Haut.svg"; 
+                upArrow.style.width = "20%";
+                upArrow.alt = "Flèche haut";
+                upArrow.classList.add("nav-arrow");
+                upArrow.onclick = () => {
+                    currentPage--;
+                    renderImages(currentPage);
+                };
+                content.appendChild(upArrow);
+            }
+
+            // Afficher les images du bloc actuel
+            const imageContainer = document.createElement("div");
+            imageContainer.classList.add("image-block");
+
+            imageGroups[page].forEach(imgObj => {
+                const container = document.createElement("div");
+                container.classList.add("image-container");
+
+                const imageElement = document.createElement("img");
+                imageElement.src = imgObj.src;
+                imageElement.alt = `Image de ${year}`;
+                imageElement.onclick = () => showPopup(imgObj.src, imgObj.titre, imgObj.text);
+
+                const textElement = document.createElement("p");
+                textElement.innerText = imgObj.titre;
+
+                container.appendChild(imageElement);
+                container.appendChild(textElement);
+                imageContainer.appendChild(container);
             });
 
-            timeline.style.display = 'flex';
+            content.appendChild(imageContainer);
+
+            // Flèche bas (SVG)
+            if (page < imageGroups.length - 1) {
+                const downArrow = document.createElement("img");
+                downArrow.src = "./images/Flèches/Bas.svg"; 
+                downArrow.style.width = "20%";
+                downArrow.alt = "Flèche bas";
+                downArrow.classList.add("nav-arrow");
+                downArrow.onclick = () => {
+                    currentPage++;
+                    renderImages(currentPage);
+                };
+                content.appendChild(downArrow);
+            }
         }
 
-        function hideTimeline() {
-            const timeline = document.getElementById('timeline');
-            timeline.style.display = 'none';
+        renderImages(currentPage);
+
+        timeline.style.display = "flex";
+}
+
+
+    function hideTimeline() {
+            document.getElementById("timeline").style.display = "none";
         }
 
-        function showPopup(src, titre, text) {
-            const popup = document.getElementById('popup');
-            const popupImg = document.getElementById('popup-img');
-            const popupTitre = document.getElementById('popup-titre');
-            const popupText = document.getElementById('popup-text');
+    function showPopup(imageSrc, titre ,text) 
+    {
+        document.getElementById("popup-img").src = imageSrc;
 
-            popupImg.src = src;
-            popupTitre.textContent = titre;
-            popupText.textContent = text;
-            popup.style.display = 'block';
-        }
+        document.getElementById("popup-titre").innerText = titre;
+        document.getElementById("popup-titre").style.textAlign = "left";
 
-        function closePopup() {
-            const popup = document.getElementById('popup');
-            popup.style.display = 'none';
-        }
+        //console.log(titre);
+        document.getElementById("popup-text").innerText = text;
+        document.getElementById("popup-text").style.textAlign = "left";
+
+        document.getElementById("popup").style.display = "block";
+    }
+
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
     </script>
 </body>
 </html>

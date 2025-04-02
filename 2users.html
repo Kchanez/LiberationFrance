@@ -14,7 +14,7 @@
             position: relative;
         }
         .logo {
-            width:100%;
+            width: 100%;
             min-height: 100px;
         }
         .carte {
@@ -29,7 +29,6 @@
             width: 100%;
             height: 100%;
         }
-        /* Ajuste les positions des SVG */
         .region1 { top: 2%; left: -3%; }
         .region2 { top: 56%; left: -14%; }
         .region3 { top: 57%; left: -91%; }
@@ -73,22 +72,27 @@
             top: 12%;
             width: 200px;
             height: 100vh;
-            /* background: rgba(0, 0, 0, 0.8); */
             color: white;
             display: none;
             flex-direction: column;
             align-items: center;
-            padding-top: 20px;
+            padding-top: 25px;
+            text-align: center;
+        }
+        .timeline .image-container {
+            height: 20vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
         }
         .timeline img {
-            width: 80%;
+            width: 100%;
             margin: 10px 0;
             border-radius: 5px;
             cursor: pointer;
         }
-        .timeline .image-container {
-            text-align: center;
-        }
+        
         .timeline .image-container p {
             color: black;
             font-size: 14px;
@@ -128,6 +132,13 @@
             top: 1%;
             left: 5%;
         }
+
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
@@ -166,35 +177,35 @@
     <script>
         const images = {
             1943: [ 
-                {src: './images/6856509_4_1.jpg', titre: 'Image 1943' , text: "lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen", region: "Normandie" }, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen', region: "Paris" }, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Bretagne"}, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Paris"}, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Corse"}, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Alsace"}, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ',  region: "Normandie"}, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Marseille"}, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Marseille"}],
+                {src: './images/6856509_4_1.jpg', titre: 'Image 1943' , text: "lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer", region: "Normandie" }, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer', region: "Paris" }, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer ', region: "Bretagne"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer ', region: "Paris"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer ', region: "Corse"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer ', region: "Alsace"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer ',  region: "Normandie"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer ', region: "Marseille"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer ', region: "Marseille"}],
             1944: [
-                {src: './images/6856509_4_1.jpg',titre: 'Image 1944' , text: "lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen"}, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ',  region: "Paris" }, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Bretagne"}, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Corse"}, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ',  region: "Normandie"}, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Alsace"}, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Corse"}, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Marseille"}, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Paris"}],
+                {src: './images/6856509_4_1.jpg',titre: 'Image 1944' , text: "lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer ',  region: "Paris" }, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer ', region: "Bretagne"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer ', region: "Corse"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer ',  region: "Normandie"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer ', region: "Alsace"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer ', region: "Corse"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer ', region: "Marseille"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer ', region: "Paris"}],
             1945: [
-                {src: './images/TERRE-275-L6254-ret.jpg',titre: 'Image 1945' , text: "lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen", region: "Normandie" }, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen',  region: "Paris" }, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Bretagne"}, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ' ,region: "Normandie"}, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ',  region: "Paris"}, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ', region: "Alsace"}, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen ',  region: "Paris"}, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen', region: "Marseille"}, 
-                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen', region: "Corse"}]
+                {src: './images/TERRE-275-L6254-ret.jpg',titre: 'Image 1945' , text: "lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer", region: "Normandie" }, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer',  region: "Paris" }, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer ', region: "Bretagne"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer ' ,region: "Normandie"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer ',  region: "Paris"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer ', region: "Alsace"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer ',  region: "Paris"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer', region: "Marseille"}, 
+                {src: './images/TERRE-275-L6254-ret.jpg', titre: 'Image 1943' , text: 'lorem upsem cjkncjofcrfvofecf,vcf,v,fv,vkfv,rivnkj enekjnz ddzjez jzndkjnezdzjn ndznzclvfnen, Lorem ipsum dolor sit amet consectetur. Nec proin nec a nisl semper suscipit ac diam. Quis lacinia quam commodo vehicula purus tristique amet. Bibendum pellentesque amet proin fermentum sed. Et magna aliquet consequat gravida congue. Duis montes massa arcu id lectus scelerisque quam. Nunc habitant molestie a egestas dictum tempor. Ac eros nibh mattis lectus pellentesque ac quam. Morbi placerat faucibus integer aliquet justo suspendisse ipsum neque. Purus metus vel malesuada morbi id nec sed integer', region: "Corse"}]
         };
 
         function showTimeline(year) {
@@ -210,23 +221,69 @@
                 selectedLink.classList.add("selected-year");
             }
 
-            images[year].forEach(imgObj => {
-                const container = document.createElement("div");
-                container.classList.add("image-container");
+            const imagesPerPage = 4; 
+            let currentPage = 0;
 
-                const imageElement = document.createElement("img");
-                imageElement.src = imgObj.src;
-                imageElement.alt = `Image de ${year}`;
-                imageElement.onclick = () => showPopup(imgObj.src, imgObj.titre, imgObj.text);
+            const imageGroups = [];
+            for (let i = 0; i < images[year].length; i += imagesPerPage) {
+                imageGroups.push(images[year].slice(i, i + imagesPerPage));
+            }
 
-                const textElement = document.createElement("p");
-                textElement.innerText = imgObj.titre;
+        function renderImages(page) {
+                content.innerHTML = "";
 
-                container.appendChild(imageElement);
-                container.appendChild(textElement);
-                content.appendChild(container);
-            });
+                // Flèche haut (SVG)
+                if (page > 0) {
+                    const upArrow = document.createElement("img");
+                    upArrow.src = "./images/Flèches/Haut.svg"; 
+                    upArrow.style.width = "20%";
+                    upArrow.alt = "Flèche haut";
+                    upArrow.classList.add("nav-arrow");
+                    upArrow.onclick = () => {
+                        currentPage--;
+                        renderImages(currentPage);
+                    };
+                    content.appendChild(upArrow);
+                }
 
+                // Afficher les images du bloc actuel
+                const imageContainer = document.createElement("div");
+                imageContainer.classList.add("image-block");
+
+                imageGroups[page].forEach(imgObj => {
+                    const container = document.createElement("div");
+                    container.classList.add("image-container");
+
+                    const imageElement = document.createElement("img");
+                    imageElement.src = imgObj.src;
+                    imageElement.alt = `Image de ${year}`;
+                    imageElement.onclick = () => showPopup(imgObj.src, imgObj.titre, imgObj.text);
+
+                    const textElement = document.createElement("p");
+                    textElement.innerText = imgObj.titre;
+
+                    container.appendChild(imageElement);
+                    container.appendChild(textElement);
+                    imageContainer.appendChild(container);
+                });
+
+                content.appendChild(imageContainer);
+
+                // Flèche bas (SVG)
+                if (page < imageGroups.length - 1) {
+                    const downArrow = document.createElement("img");
+                    downArrow.src = "./images/Flèches/Bas.svg"; 
+                    downArrow.style.width = "20%";
+                    downArrow.alt = "Flèche bas";
+                    downArrow.classList.add("nav-arrow");
+                    downArrow.onclick = () => {
+                        currentPage++;
+                        renderImages(currentPage);
+                    };
+                    content.appendChild(downArrow);
+                }
+            }
+            renderImages(currentPage);
             timeline.style.display = "flex";
         }
 
