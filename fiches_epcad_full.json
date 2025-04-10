@@ -1,0 +1,41 @@
+{ 
+    "Normandie": {
+         "images": [
+            {
+                "Titre": "Accueil du général Leclerc par le général Walker sur Utah Beach",
+                "ref": "TERRE 10537-G13", 
+                "Date": "1er aout 1944",
+                "Lieu": "Utah Beach, Saint-Martin-de-Varreville (Manche, Basse-Normandie, France)",
+                "Auteur": "Inconnu",
+                "Source": "Fonds de l'ECPAD - Service de production cinématographique et photographique (1936-1946)",
+                "Description": "Le 1er aout 1944, aux alentours de 11h, le major general Walton Harris Walker, commandant le XXe corps d'armée de la IIIe armée américaine, accueille le général de division Philippe Leclerc de Hauteclocque et son état-major à leur arrivée sur la plage d'Utah Beach. À droite du général Leclerc se tient son aide de camp, le capitaine Christian Girard. De dos, on distingue le colonel Bernard, chef d'Etat-major de la 2e DB. Au centre de la scène, le capitaine Gribius, chef du 3e bureau de la division, complète la délégation française.",
+                "src": "./Normandie/TERRE 10537-G13.jpg"
+            },
+            {
+                "Titre": "Arrivée du général Leclerc sur Utah Beach - 1er aout 1944",
+                "ref": "TERRE 10537-L15",
+                "Date": "1er aout 1944",
+                "Lieu": "Utah Beach, Saint-Martin-de-Varreville (Manche, Basse-Normandie, France)",
+                "Auteur": "Inconnu",
+                "Source": "Fonds de l'ECPAD - Service cinématographique et photographique de l'Armée de Terre (1942-1946)",
+                "Description": "Cette photographie documente l'arrivée du général Philippe Leclerc de Hauteclocque, commandant la 2e division blindée (2e DB), sur la plage de Utah Beach, le 1er aout 1944 vers 11h. Entouré de son état-major, il est accueilli par des éléments de la IIIe armée américaine. À sa droite, on reconnait le lieutenant Christian Girard, son aide de camp, et à sa gauche, le colonel Bernard, chef d'état-major de la division. À droite de l'image, la caméra Leblay d'un opérateur français témoigne de la présence de cinéastes venus immortaliser cet événement historique.",
+                "src": "./Normandie/TERRE 10537-L15.jpg"
+            },
+            {
+                "Titre": "Arrivée du général Leclerc et de son Etat-major sur Utah Beach - 1er aout 1944",
+                "ref": "TERRE 10537-G5",
+                "Date": "1er aout 1944",
+                "Lieu": "Utah Beach, Saint-Martin-de-Varreville (Manche, Basse-Normandie, France)",
+                "Auteur": "Inconnu (photographe du Signal Corps américain)",
+                "Source": "Fonds de l'ECPAD - Service de production cinématographique et photographique, 2e Guerre mondiale",
+                "Description": "Le 1er aout 1944, vers 11h, le général de division Philippe Leclerc de Hauteclocque, commandant la 2e division blindée (2e DB), débarque sur la plage d'Utah Beach, à Saint-Martin-de-Varreville. Il est accueilli par des éléments de la IIIe armée américaine. À ses c\u00f4tés se trouvent son aide de camp, le capitaine Christian Girard, et, sur sa droite, le lieutenant-colonel Répiton-Préneuf. L'événement est largement couvert par les photographes et cameramen américains du Signal Corps.",
+                "src": "./Normandie/TERRE 10537-G5.jpg"
+            }
+        ],
+        "video": {
+            "ref": "SA 931", 
+            "description": "Débarquement à Caen.", 
+            "src": "./Normandie/caen_video.mp4"
+        }  
+    }
+}

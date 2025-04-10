@@ -10,9 +10,14 @@
             display: flex;
             justify-content: space-between;
             min-height: 1080px;
-            background-color: #CBD9E0;
-            position: relative;
+            min-width: 100%;
+            padding: 0px;
+            margin: 0px;
+            background-image: url(./carte1.svg);
+            background-repeat: no-repeat;
+            background-size:  100% 100%;
         }
+
         .logo {
             width: 100%;
             min-height: 100px;
@@ -146,7 +151,8 @@
         <img class="logo" src="./Logo/logo.svg" alt="Logo">
     </header>
     
-    <div class="carte">
+
+    <!-- <div class="carte">
         <img src="./CarteFrance/Vector 1.svg" class="region region1" alt="Région 1">
         <img src="./CarteFrance/Vector 2.svg" class="region region2" alt="Région 2">
         <img src="./CarteFrance/Vector 3.svg" class="region region3" alt="Région 3">
@@ -154,7 +160,7 @@
         <img src="./CarteFrance/Vector 5.svg" class="region region5" alt="Région 5">
         <img src="./CarteFrance/Vector 6.svg" class="region region6" alt="Région 6">
         <img src="./CarteFrance/Vector 7.svg" class="region region7" alt="Région 7">
-    </div>
+    </div> -->
 
     <div class="Barre">
         <a class="year-link" href="#" data-year="1943"onclick="showTimeline(1943)"> 1943 </a> 
@@ -229,7 +235,8 @@
                 imageGroups.push(images[year].slice(i, i + imagesPerPage));
             }
 
-        function renderImages(page) {
+        function renderImages(page) 
+        {
                 content.innerHTML = "";
 
                 // Flèche haut (SVG)
@@ -282,7 +289,7 @@
                     };
                     content.appendChild(downArrow);
                 }
-            }
+        }
             renderImages(currentPage);
             timeline.style.display = "flex";
         }
