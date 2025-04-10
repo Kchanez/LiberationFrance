@@ -1,10 +1,13 @@
 { 
     "Normandie": {
-         "images": [
+        "periodeDescription" : "Connu sous le nom de 'Jour J', le débarquement de Normandie marque le début de la Libération de la France. Les forces alliées, au nombre de 150 000, accompagnées par plus de 3000 français, débarquent sur les plages de Normandie, ouvrant un nouveau front contre les forces allemandes.",
+        "date" : "6 juin 1944",
+        "lien" : "https://www.defense.gouv.fr/ministere/dossiers-evenementiels-thematiques-du-ministere-armees/1944-france-liberee?",
+        "images": [
             {
                 "Titre": "Accueil du général Leclerc par le général Walker sur Utah Beach",
                 "ref": "TERRE 10537-G13", 
-                "Date": "1er aout 1944",
+                "Date": "1er août 1944",
                 "Lieu": "Utah Beach, Saint-Martin-de-Varreville (Manche, Basse-Normandie, France)",
                 "Auteur": "Inconnu",
                 "Source": "Fonds de l'ECPAD - Service de production cinématographique et photographique (1936-1946)",
