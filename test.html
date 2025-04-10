@@ -165,8 +165,8 @@
             position:  absolute;
             top: 42%; 
             left: 45%;
-            width: 50vh; 
-            height: 25vh;
+            width: calc(50vh - 50px);; 
+            height: 350px;;
             background-color: rgba(0, 0, 0, 0.7);
             justify-content: center;
             align-items: center;
@@ -413,7 +413,7 @@
         });
     
     </script>
-    
+    <!--Déplacement du pop up période  -->
     <script>
         let isDragging = false;
         let offsetX, offsetY;
@@ -453,7 +453,7 @@
         function endDrag() {
             isDragging = false;
         }
-        </script>
+    </script>
         
 </body>
 </html>
