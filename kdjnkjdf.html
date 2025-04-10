@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Frise chronologique - Libération</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 50px;
+    }
+
+    .Barre {
+        position: absolute;
+        right: 4%;
+        top: 30%;
+        border-right: 4px solid #C9C9C9;
+        margin-right: 40px;
+        padding-right: 60px;
+        /* min-height: 1920px; */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+    .event {
+      position: relative;
+      margin: 0px 20px 40px 0px;
+      text-align: right;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .event::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -100px;
+      width: 42px;
+      height: 42px;
+      background-color: #C9C9C9;
+      border-radius: 12px; 
+    }
+
+    .date {
+      font-size: 17px;
+      color: #000;
+    }
+
+    .description {
+      padding: 0px 0px 16px;
+      border-radius: 8px;
+      font-size: 30px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="Barre">
+
+    <div class="event">
+      <div class="date">De septembre à octobre 1943</div>
+      <div class="description">Libération de la Corse</div>
+    </div>
+
+    <div class="event">
+      <div class="date">Le 6 juin 1944</div>
+      <div class="description">Débarquement de Normandie</div>
+    </div>
+
+    <div class="event">
+      <div class="date">Le 15 août 1944</div>
+      <div class="description">Débarquement de Provence</div>
+    </div>
+
+    <div class="event">
+      <div class="date">Le 25 août 1944</div>
+      <div class="description">Libération de Paris</div>
+    </div>
+
+    <div class="event">
+      <div class="date">Le 23 novembre 1944</div>
+      <div class="description">Libération de Strasbourg</div>
+    </div>
+
+    <div class="event">
+      <div class="date">Du 20 janvier au 9 février 1945</div>
+      <div class="description">Bataille de Colmar</div>
+    </div>
+    <div class="event">
+        <div class="date">Avril 1945</div>
+        <div class="description">Bataille des Alpes</div>
+      </div>
+      <div class="event">
+        <div class="date">Mai 1945</div>
+        <div class="description">Libération des poches de l'Atlantique</div>
+      </div>
+  </div>
+
+</body>
+</html>

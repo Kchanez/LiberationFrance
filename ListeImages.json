@@ -1,7 +1,7 @@
 {
     "Marseille": {
       "images": [
-        {"ref": "TERRE 271-6110", "description": "Cérémonie militaire dans Marseille libérée : défilé motorisé des unités de la 1re armée", "src": "chemin/vers/marseille1.jpg"},
+        {"ref": "TERRE 271-6110", "description": "Cérémonie militaire dans Marseille libérée : défilé motorisé des unités de la 1re armée", "src": "chemin/vers/marseille1.jpg", "ville" : "Marseille"},
         {"ref": "TERRE 271-6089", "description": "Défilé des tirailleurs après la libération de Marseille", "src": "chemin/vers/marseille2.jpg"},
         {"ref": "TERRE 270-6014", "description": "Combat de rue à Marseille", "src": "chemin/vers/marseille3.jpg"},
         {"ref": "TERRE 276-6386", "description": "Un reporter du SCA discute avec un circulateur dans Marseille libérée", "src": "chemin/vers/marseille4.jpg"},
