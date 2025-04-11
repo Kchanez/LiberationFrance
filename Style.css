@@ -1,0 +1,202 @@
+
+body {
+    font-family: "Montserrat";
+    display: flex;
+    justify-content: space-between;
+    min-height: 1080px;
+    min-width: 100%;
+    padding: 0px;
+    margin: 0px;
+    /* background-image: url(./carte1.svg); */
+    background-repeat: no-repeat;
+    background-size:  100% 100%;
+}
+header {
+    position: absolute;
+    margin: 35px;
+}
+.logo {
+    width: 100%;
+    min-height: 100px;
+}
+.carte {
+    position: relative;
+    min-width: 100%;
+    height: 100%;
+}
+.carteFr {
+    width: 100%;
+    height: 100%;
+}
+
+.Barre {
+    position: fixed;
+    right: 4%;
+    top: 30%;
+    border-right: 4px solid #C9C9C9;
+    margin-right: 40px;
+    padding-right: 60px;
+    min-height: 1920px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.event {
+position: relative;
+transition: transform 0.3s ease, background-color 0.3s ease;
+margin: 0px 20px 40px 0px;
+text-align: right;
+width: 100%;
+max-width: 500px;
+}
+
+.event::before {
+content: '';
+position: absolute;
+top: 0;
+right: -100px;
+width: 42px;
+height: 42px;
+background-color: #C9C9C9;
+border-radius: 12px; 
+transition: background-color 0.3s ease;
+}
+.date {
+font-size: 17px;
+color: #000;
+}
+
+.description {
+padding: 0px 0px 16px;
+border-radius: 8px;
+font-size: 30px;
+font-weight: 500;
+transition: color 0.3s ease;
+}
+
+.event.active {
+    transform: scale(1.05);
+}
+.event.active::before {
+    background-color: #C61A0B;
+}
+.event.active .description {
+    color: #C61A0B;
+}
+
+.selected-year {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.timeline {
+    position: absolute;
+    left: 5%;
+    top: 12%;
+    width: 200px;
+    height: 100vh;
+    color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25px;
+    text-align: center;
+}
+.timeline .image-container {
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+.timeline img {
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.timeline .image-container p {
+    color: black;
+    font-size: 14px;
+    margin-top: 5px;
+}
+.close {
+    color: black;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    cursor: pointer;
+    font-size: 30px;
+}
+.popup {
+    display: none;
+    height: 100vh;
+    min-width: 480px;
+    position: absolute;
+    top: 0%;
+    left: 84.5%;
+    transform: translate(-45%, 0%);
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    text-align: center;
+}
+.popup img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 5px;
+}
+.popup .close-popup {
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    margin-top: 10px;
+    position: absolute;
+    top: 1%;
+    left: 5%;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.popup-overlay {
+    display: none;
+    position:  absolute;
+    top: 529px;
+    left: 1400px;
+    max-width: 350px; 
+    min-height: 259.81px;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.popup-content {
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 100%;
+    text-align: left;
+    font-size: 13px;
+    position: relative;
+}
+.close-btn {
+    position: absolute;
+    top: 20px; 
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+}
+.periode-lien
+{
+    text-decoration: none;
+    color: white;
+    font-size: 10px;
+    font-weight: 100;
+}
