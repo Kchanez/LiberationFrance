@@ -165,8 +165,8 @@
             position:  absolute;
             top: 529px;
             left: 1400px;
-            width: 350px; 
-            height: 259.81px;
+            max-width: 350px; 
+            min-height: 259.81px;
             background-color: rgba(0, 0, 0, 0.7);
             justify-content: center;
             align-items: center;
@@ -295,7 +295,9 @@
             const timeline = document.getElementById("timeline");
             const content = document.getElementById("timeline-content");
             content.innerHTML = "";
-            
+            //Masquer le popup de la période
+            document.getElementById("periode-popup").style.display = "none";
+
             document.querySelectorAll(".year-link").forEach(link => {
                 link.classList.remove("selected-year");
             });
@@ -309,7 +311,6 @@
     
             const imageGroups = [];
             if (eventsData[ville]) {
-                console.log(eventsData[ville]);
                 for (let i = 0; i < eventsData[ville].images.length; i += imagesPerPage) {
                     imageGroups.push(eventsData[ville].images.slice(i, i + imagesPerPage));
                 }
@@ -453,7 +454,7 @@
         function endDrag() {
             isDragging = false;
         }
-    </script>
+    </script> 
         
 </body>
 </html>
