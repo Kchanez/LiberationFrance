@@ -80,7 +80,17 @@ function initDragEvents(element) {
     }
 }
 
-// Replace the existing showPopup function in your FriseImg.js
+//  showPopup function 
 function showPopup(imageSrc, titre, text) {
-    createPopup(imageSrc, titre, text);
+    // Vérifier si l'image existe déjà
+    const existingPopups = document.querySelectorAll('.popup');
+    const isDuplicate = Array.from(existingPopups).some(popup => {
+        const img = popup.querySelector('img');
+        return img && img.getAttribute('src') === imageSrc;
+    });
+
+    // Créer le popup seulement si l'image n'existe pas déjà
+    if (!isDuplicate) {
+        createPopup(imageSrc, titre, text);
+    }
 }

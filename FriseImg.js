@@ -113,6 +113,18 @@ window.onload = loadData;
 
 
 function showTimeline(ville) {
+    // Add scroll functionality at the start of the function
+    const barre = document.querySelector('.Barre');
+    const clickedEvent = Array.from(document.querySelectorAll('.event'))
+        .find(ev => ev.textContent.includes(ville));
+    if (clickedEvent) {
+        const eventPosition = clickedEvent.offsetTop;
+        if (eventPosition > window.innerHeight / 2) {
+            barre.classList.add('scrolled');
+        } else {
+            barre.classList.remove('scrolled');
+        }
+    }
     // Remove all existing popups when switching to a new period
     const existingPopups = document.querySelectorAll('.popup');
     existingPopups.forEach(popup => {
@@ -218,11 +230,7 @@ function closePopupPeriode() {
 }
 function hideTimeline() {
     document.getElementById("timeline").style.display = "none";
-}
-// Fonction pour afficher le popup
-
-function showPopup(imageSrc, titre, text) {
-    createPopup(imageSrc, titre, text);
+    document.querySelector('.Barre').classList.remove('scrolled');
 }
 
 // Fonction pour fermer le popup
