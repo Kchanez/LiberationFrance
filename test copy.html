@@ -74,9 +74,7 @@
           <p id="periode-text"></p>
           <a href="" class="periode-lien" id="periode-lien" target="_blank"></a>
         </div>
-      </div>
-      
-      
+    </div>
 
 
     <script>
@@ -128,19 +126,15 @@
                     document.getElementById("periode-popup").style.display = "flex";
                 }    
             }
-
+            //Animation de l'event
             document.querySelectorAll(".event").forEach(ev => ev.classList.remove("active"));
+            // Trouver l'élément cliqué (grâce au nom de la ville)
+            const matchingEvent = Array.from(document.querySelectorAll(".event"))
+            .find(ev => ev.textContent.includes(ville));
 
-// Trouver l'élément cliqué (grâce au nom de la ville)
-const matchingEvent = Array.from(document.querySelectorAll(".event"))
-  .find(ev => ev.textContent.includes(ville));
-
-if (matchingEvent) {
-  matchingEvent.classList.add("active");
-}
-
-
-
+            if (matchingEvent) {
+            matchingEvent.classList.add("active");
+            }
 
             function renderImages(page) {
                 content.innerHTML = "";
@@ -234,10 +228,113 @@ if (matchingEvent) {
     </script>
     <!--Déplacement du pop up période  -->
     <script>
+        let isDragging1= false;
+        let offsetX1, offsetY1;
+        
+        const popup1 = document.getElementById("periode-popup");
+        
+        popup1.addEventListener('touchstart', startDrag, false);
+        popup1.addEventListener('touchmove', drag, false);
+        popup1.addEventListener('touchend', endDrag, false);
+        
+        popup1.addEventListener('mousedown', startDrag, false);
+        popup1.addEventListener('mousemove', drag, false);
+        popup1.addEventListener('mouseup', endDrag, false);
+        
+        function startDrag(e) {
+            isDragging1= true;
+            const touch = e.touches ? e.touches[0] : e;
+            const rect = popup1.getBoundingClientRect();
+            offsetX1 = touch.clientX - rect.left;
+            offsetY1 = touch.clientY - rect.top;
+            popup1.style.position = 'absolute';
+            popup1.style.zIndex = 1000;
+        }
+        
+        function drag(e) {
+            if (!isDragging1) return;
+            e.preventDefault();
+        
+            const touch = e.touches ? e.touches[0] : e;
+            const x = touch.clientX - offsetX1;
+            const y = touch.clientY - offsetY1;
+        
+            popup1.style.left = x + 'px';
+            popup1.style.top = y + 'px';
+        }
+        
+        function endDrag() {
+            isDragging1= false;
+        }
+    </script>  
+        
+    <!--Déplacement du pop up img -->
+    <!-- <script>
+        const popup = document.querySelector('.popup');
+        let isDragging = false;
+        let currentX;
+        let currentY;
+        let initialX;
+        let initialY;
+        let xOffset = 0;
+        let yOffset = 0;
+
+        popup.addEventListener('mousedown', dragStart);
+        popup.addEventListener('mouseup', dragEnd);
+        popup.addEventListener('mousemove', drag);
+
+        popup.addEventListener('touchstart', dragStart);
+        popup.addEventListener('touchend', dragEnd);
+        popup.addEventListener('touchmove', drag);
+
+        function dragStart(e) {
+            if (e.type === 'touchstart') {
+                initialX = e.touches[0].clientX - xOffset;
+                initialY = e.touches[0].clientY - yOffset;
+            } else {
+                initialX = e.clientX - xOffset;
+                initialY = e.clientY - yOffset;
+            }
+
+            if (e.target === popup) {
+                isDragging = true;
+            }
+        }
+
+        function dragEnd(e) {
+            initialX = currentX;
+            initialY = currentY;
+            isDragging = false;
+        }
+
+        function drag(e) {
+            if (isDragging) {
+                e.preventDefault();
+
+                if (e.type === 'touchmove') {
+                    currentX = e.touches[0].clientX - initialX;
+                    currentY = e.touches[0].clientY - initialY;
+                } else {
+                    currentX = e.clientX - initialX;
+                    currentY = e.clientY - initialY;
+                }
+
+                xOffset = currentX;
+                yOffset = currentY;
+
+                setTranslate(currentX, currentY, popup);
+            }
+        }
+
+        function setTranslate(xPos, yPos, el) {
+            el.style.transform = `translate(${xPos}px, ${yPos}px)`;
+        }
+    </script> -->
+    <script>
         let isDragging = false;
         let offsetX, offsetY;
         
-        const popup = document.getElementById("periode-popup");
+        const popup = document.getElementById("popup");
         
         popup.addEventListener('touchstart', startDrag, false);
         popup.addEventListener('touchmove', drag, false);
@@ -273,6 +370,5 @@ if (matchingEvent) {
             isDragging = false;
         }
     </script> 
-        
 </body>
 </html>
