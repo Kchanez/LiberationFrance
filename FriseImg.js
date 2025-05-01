@@ -196,11 +196,21 @@ function showTimeline(ville) {
             imageElement.alt = `Image de ${ville}`;
             imageElement.onclick = () => showPopup(imgObj.src, imgObj.Titre, imgObj.Description);
 
+
             const textElement = document.createElement("p");
-            textElement.innerText = imgObj.Titre;
+            textElement.innerText = imgObj.Date;
+            textElement.style.fontSize = "14px";
+            textElement.style.fontWeight = "bold";
+            textElement.style.margin = "0px";
+        
+            const textElement1 = document.createElement("p");
+            textElement1.innerText = imgObj.Titre;
+            textElement1.style.fontSize = "13px";
+
 
             container.appendChild(imageElement);
             container.appendChild(textElement);
+            container.appendChild(textElement1);
             imageContainer.appendChild(container);
         });
 

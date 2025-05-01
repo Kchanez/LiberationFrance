@@ -87,7 +87,7 @@
 
     "Provence": {
         "periodeDescription" : "Débarquement de Provence (Opération Dragoon) : Bouleversement stratégique : l’opération clé de la Libération Initialement prévue en Juin 1944 avec l’opération Overloard sur les côtes normandes, l'opération Dragoon démarre avec deux mois de retard, le 15 Août 1944. Le commandement général de l'opération est assuré par le général américain Alexander Patch, tandis que les forces françaises, majoritairement issues de colonies ou d’Algérie, sont dirigées par le général Jean de Lattre de Tassigny .​ Au total, 350 000 soldats alliés, dont 230 000 français, vont combattre les troupes allemandes. Les pertes alliées s'élèvent à environ 7 000 hommes (tués, blessés et disparus), tandis que les pertes allemandes sont estimées à environ 10 000 tués, 25 000 blessés et 130 000 prisonniers . De par sa position stratégique, cette opération permet une avancée rapide vers le Nord, dans les Vosges et en Alsace, aboutissant ainsi à la Libération de tout le territoire.",
-        "date" : "15 aoûtoût 1944",
+        "date" : "15 août 1944",
         "lien" : "https://www.defense.gouv.fr/ministere/dossiers-evenementiels-thematiques-du-ministere-armees/1944-france-liberee?",
         "images" :[
             {
@@ -131,7 +131,7 @@
                 "src": "./Pronvence/TERRE 265-5938.svg"
             },
             {
-                "Titre": "Troupes françaises en route pour la France. Tirailleurs sénégalais sur le pont de transport",
+                "Titre": "Tirailleurs sénégalais sur le pont de transport.",
                 "ref": "TERRE 264-5917", 
                 "Date": "13 Août - 16 Août 1944",
                 "Lieu": "Méditerranée",
