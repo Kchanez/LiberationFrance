@@ -42,8 +42,6 @@
         }  
     },
 
-
-
     "Corse": {
         "periodeDescription" : "Première région française libérée, la Corse est reprise grâce à l’action conjointe de la Résistance, des troupes italiennes ralliées et des forces françaises libres. L’île est totalement libérée le 4 octobre 1943.",
         "date" : "sept à oct 1943",
@@ -85,5 +83,73 @@
             "description": "Débarquement à Caen.", 
             "src": "./Normandie/caen_video.mp4"
         }  
+    },
+
+    "Provence": {
+        "periodeDescription" : "Débarquement de Provence (Opération Dragoon) : Bouleversement stratégique : l’opération clé de la Libération Initialement prévue en Juin 1944 avec l’opération Overloard sur les côtes normandes, l'opération Dragoon démarre avec deux mois de retard, le 15 Août 1944. Le commandement général de l'opération est assuré par le général américain Alexander Patch, tandis que les forces françaises, majoritairement issues de colonies ou d’Algérie, sont dirigées par le général Jean de Lattre de Tassigny .​ Au total, 350 000 soldats alliés, dont 230 000 français, vont combattre les troupes allemandes. Les pertes alliées s'élèvent à environ 7 000 hommes (tués, blessés et disparus), tandis que les pertes allemandes sont estimées à environ 10 000 tués, 25 000 blessés et 130 000 prisonniers . De par sa position stratégique, cette opération permet une avancée rapide vers le Nord, dans les Vosges et en Alsace, aboutissant ainsi à la Libération de tout le territoire.",
+        "date" : "15 aoûtoût 1944",
+        "lien" : "https://www.defense.gouv.fr/ministere/dossiers-evenementiels-thematiques-du-ministere-armees/1944-france-liberee?",
+        "images" :[
+            {
+                "Titre": "Le chef de gare de la Nartelle dit sa joie aux soldats français.",
+                "ref": "TERRE 262-5887", 
+                "Date": "15 août 1944",
+                "Lieu": "France, Provence-Alpes-Côte d'Azur, Var, Sainte-Maxime",
+                "Auteur": "Inconnu",
+                "Source": "Fonds de l'ECPAD - Service de production cinématographique et photographique (1936-1946)",
+                "Description": "Le chef de gare, Mr. Portal de la Nartelle salue des soldats du combat command n°1 (CC1) qui viennent de débarquer sur la plage des Eléphants à Sainte-Maxime. L'insigne de bras du soldat au premier plan a été masqué par la censure (négatif griffé).",
+                "src": "./Pronvence/TERRE 262-5887.svg"
+            },
+            {
+                "Titre": "Soldats du 3e RTA après le débarquement",
+                "ref": "TERRE 265-5946", 
+                "Date": "16 Août - 17 Août 1944",
+                "Lieu": "France, Var",
+                "Auteur": "Inconnu",
+                "Source": "Fonds de l'ECPAD - Service de production cinématographique et photographique (1936-1946)",
+                "Description": "Soldats du 3e RTA (régiment de tirailleurs algériens) venant de la plage de la Foux où ils viennent de débarquer. Ils font une pause sur la route (RN 559) avant de prendre la route vers la zone de regroupement située à l'ouest de Cogolin.",
+                "src": "./Pronvence/TERRE 265-5946.svg"
+            },
+            {
+                "Titre": "Débarquement des unités de l'Armée B par chaland LCM à la plage du Foux.",
+                "ref": "TERRE 265-5934", 
+                "Date": "16 Août 1944",
+                "Lieu": "Méditerranée",
+                "Auteur": "Inconnu",
+                "Source": "Fonds de l'ECPAD - Service de production cinématographique et photographique (1936-1946)",
+                "Description": "Le 16 août 1944, un LCM de la Royal Navy transportant des jeeps de la 3e DIA (division d'infanterie algérienne) et du 7e RCA (régiment de chasseurs d'Afrique) aborde la plage 262 ou Red beach, appelée plage de Grimaud par les Américains et de la Foux par les Français.",
+                "src": "./Pronvence/TERRE 265-5934.svg"
+            },
+            {
+                "Titre": "Soldats du 3e RTA après le débarquement",
+                "ref": "TERRE 265-5938", 
+                "Date": "16 Août - 17 Août",
+                "Lieu": "France, Var, Cogolin",
+                "Auteur": "Inconnu",
+                "Source": "Fonds de l'ECPAD - Service de production cinématographique et photographique (1936-1946)",
+                "Description": "Soldats du 3e RTA (régiment de tirailleurs algériens) venant de la plage de la Foux où ils viennent de débarquer. Traversant la voie ferrée de Provence, ils s'acheminent vers leur lieu de rassemblement près de Cogolin.",
+                "src": "./Pronvence/TERRE 265-5938.svg"
+            },
+            {
+                "Titre": "Troupes françaises en route pour la France. Tirailleurs sénégalais sur le pont de transport",
+                "ref": "TERRE 264-5917", 
+                "Date": "13 Août - 16 Août 1944",
+                "Lieu": "Méditerranée",
+                "Auteur": "Inconnu",
+                "Source": "Fonds de l'ECPAD - Service de production cinématographique et photographique (1936-1946)",
+                "Description": "Tirailleurs du 8e régiment de tirailleurs sénégalais (rattaché à la 3e DIA pour la traversée) accoudés au bastingage du paquebot polonais transport de troupes M.S. (Motors ship) Batory qui se dirige vers les côtes provençales.",
+                "src": "./Pronvence/TERRE 264-5917.svg"
+            },
+            {
+                "Titre": "Le général d'armée Jean de Lattre de Tassigny, commandant l'Armée B, à bord du paquebot transport de troupes M.S. Batory.",
+                "ref": "TERRE 264-5921", 
+                "Date": "13 Août - 16 Août",
+                "Lieu": "Méditerranée",
+                "Auteur": "Inconnu",
+                "Source": "Fonds de l'ECPAD - Service de production cinématographique et photographique (1936-1946)",
+                "Description": "Le général d'armée Jean de Lattre de Tassigny, commandant l'armée B, est à bord du paquebot transport de troupes M.S. Batory qui s'approche des côtes de Provence.",
+                "src": "./Pronvence/TERRE 264-5921.svg"
+            }
+        ]
     }
 }

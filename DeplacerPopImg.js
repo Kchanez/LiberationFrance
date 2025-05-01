@@ -1,12 +1,31 @@
-// Fonction pour créer un nouveau popup
 function createPopup(imageSrc, titre, text) {
     const newPopup = document.createElement('div');
     newPopup.className = 'popup';
+
+    // Trouver l'image dans eventsData
+    let imageData = null;
+    for (const period in eventsData) {
+        const images = eventsData[period].images;
+        if (images) {
+            imageData = images.find(img => img.src === imageSrc);
+            if (imageData) break;
+        }
+    }
+
     newPopup.innerHTML = `
         <img src="${imageSrc}" alt="Zoomed Image">
         <span class="close-popup" onclick="this.parentElement.remove()">&times;</span>
-        <h3>${titre}</h3>
-        <p>${text}</p>
+        <h3>${titre} - ${imageData?.Date || 'Non spécifiée'} </h3>
+        <p class="p1"> ${imageData?.Lieu || 'Non spécifié'} </p>
+
+        <p class="p2">${text}</p>
+        
+        <div class="image-details">
+            <p class="p3"> ©  ${imageData?.Auteur || 'Non spécifié'} /ECPAD/Défense/ ${imageData?.ref || 'Non spécifiée'} <br>
+                ${imageData?.Source || 'Non spécifiée'} <br> 
+                © ECPAD / Ministère des Armées 
+            </p>        
+        </div>
     `;
     
     document.body.appendChild(newPopup);
