@@ -1,95 +1,39 @@
 { 
-    "Normandie": {
-        "periodeDescription" : "Connu sous le nom de 'Jour J', le débarquement de Normandie marque le début de la Libération de la France. Les forces alliées, au nombre de 150 000, accompagnées par plus de 3000 français, débarquent sur les plages de Normandie, ouvrant un nouveau front contre les forces allemandes.",
-        "date" : "6 juin 1944",
-        "lien" : "https://www.defense.gouv.fr/ministere/dossiers-evenementiels-thematiques-du-ministere-armees/1944-france-liberee?",
-        "images": [
-            {
-                "Titre": "Accueil du général Leclerc par le général Walker sur Utah Beach",
-                "ref": "TERRE 10537-G13", 
-                "Date": "1er août 1944",
-                "Lieu": "Utah Beach, Saint-Martin-de-Varreville (Manche, Basse-Normandie, France)",
-                "Auteur": "Inconnu",
-                "Source": "Fonds de l'ECPAD - Service de production cinématographique et photographique (1936-1946)",
-                "Description": "Le 1er aout 1944, aux alentours de 11h, le major general Walton Harris Walker, commandant le XXe corps d'armée de la IIIe armée américaine, accueille le général de division Philippe Leclerc de Hauteclocque et son état-major à leur arrivée sur la plage d'Utah Beach. À droite du général Leclerc se tient son aide de camp, le capitaine Christian Girard. De dos, on distingue le colonel Bernard, chef d'Etat-major de la 2e DB. Au centre de la scène, le capitaine Gribius, chef du 3e bureau de la division, complète la délégation française.",
-                "src": "./Normandie/TERRE 10537-G13.jpg"
-            },
-            {
-                "Titre": "Arrivée du général Leclerc sur Utah Beach - 1er aout 1944",
-                "ref": "TERRE 10537-L15",
-                "Date": "1er aout 1944",
-                "Lieu": "Utah Beach, Saint-Martin-de-Varreville (Manche, Basse-Normandie, France)",
-                "Auteur": "Inconnu",
-                "Source": "Fonds de l'ECPAD - Service cinématographique et photographique de l'Armée de Terre (1942-1946)",
-                "Description": "Cette photographie documente l'arrivée du général Philippe Leclerc de Hauteclocque, commandant la 2e division blindée (2e DB), sur la plage de Utah Beach, le 1er aout 1944 vers 11h. Entouré de son état-major, il est accueilli par des éléments de la IIIe armée américaine. À sa droite, on reconnait le lieutenant Christian Girard, son aide de camp, et à sa gauche, le colonel Bernard, chef d'état-major de la division. À droite de l'image, la caméra Leblay d'un opérateur français témoigne de la présence de cinéastes venus immortaliser cet événement historique.",
-                "src": "./Normandie/TERRE 10537-L15.jpg"
-            },
-            {
-                "Titre": "Arrivée du général Leclerc et de son Etat-major sur Utah Beach - 1er aout 1944",
-                "ref": "TERRE 10537-G5",
-                "Date": "1er aout 1944",
-                "Lieu": "Utah Beach, Saint-Martin-de-Varreville (Manche, Basse-Normandie, France)",
-                "Auteur": "Inconnu (photographe du Signal Corps américain)",
-                "Source": "Fonds de l'ECPAD - Service de production cinématographique et photographique, 2e Guerre mondiale",
-                "Description": "Le 1er aout 1944, vers 11h, le général de division Philippe Leclerc de Hauteclocque, commandant la 2e division blindée (2e DB), débarque sur la plage d'Utah Beach, à Saint-Martin-de-Varreville. Il est accueilli par des éléments de la IIIe armée américaine. À ses c\u00f4tés se trouvent son aide de camp, le capitaine Christian Girard, et, sur sa droite, le lieutenant-colonel Répiton-Préneuf. L'événement est largement couvert par les photographes et cameramen américains du Signal Corps.",
-                "src": "./Normandie/TERRE 10537-G5.jpg"
-            }
-        ],
-        "video": {
-            "ref": "SA 931", 
-            "description": "Débarquement à Caen.", 
-            "src": "./Normandie/caen_video.mp4"
-        }  
-    },
-
-    "Corse": {
-        "periodeDescription" : "Première région française libérée, la Corse est reprise grâce à l’action conjointe de la Résistance, des troupes italiennes ralliées et des forces françaises libres. L’île est totalement libérée le 4 octobre 1943.",
-        "date" : "sept à oct 1943",
-        "lien" : "https://www.defense.gouv.fr/ministere/dossiers-evenementiels-thematiques-du-ministere-armees/1944-france-liberee?",
-        "images": [
-            {
-                "Titre": "Accueil du général Leclerc par le général Walker sur Utah Beach",
-                "ref": "TERRE 10537-G13", 
-                "Date": "1er août 1944",
-                "Lieu": "Utah Beach, Saint-Martin-de-Varreville (Manche, Basse-Normandie, France)",
-                "Auteur": "Inconnu",
-                "Source": "Fonds de l'ECPAD - Service de production cinématographique et photographique (1936-1946)",
-                "Description": "Le 1er aout 1944, aux alentours de 11h, le major general Walton Harris Walker, commandant le XXe corps d'armée de la IIIe armée américaine, accueille le général de division Philippe Leclerc de Hauteclocque et son état-major à leur arrivée sur la plage d'Utah Beach. À droite du général Leclerc se tient son aide de camp, le capitaine Christian Girard. De dos, on distingue le colonel Bernard, chef d'Etat-major de la 2e DB. Au centre de la scène, le capitaine Gribius, chef du 3e bureau de la division, complète la délégation française.",
-                "src": "./Normandie/TERRE 10537-G13.jpg"
-            },
-            {
-                "Titre": "Arrivée du général Leclerc sur Utah Beach - 1er aout 1944",
-                "ref": "TERRE 10537-L15",
-                "Date": "1er aout 1944",
-                "Lieu": "Utah Beach, Saint-Martin-de-Varreville (Manche, Basse-Normandie, France)",
-                "Auteur": "Inconnu",
-                "Source": "Fonds de l'ECPAD - Service cinématographique et photographique de l'Armée de Terre (1942-1946)",
-                "Description": "Cette photographie documente l'arrivée du général Philippe Leclerc de Hauteclocque, commandant la 2e division blindée (2e DB), sur la plage de Utah Beach, le 1er aout 1944 vers 11h. Entouré de son état-major, il est accueilli par des éléments de la IIIe armée américaine. À sa droite, on reconnait le lieutenant Christian Girard, son aide de camp, et à sa gauche, le colonel Bernard, chef d'état-major de la division. À droite de l'image, la caméra Leblay d'un opérateur français témoigne de la présence de cinéastes venus immortaliser cet événement historique.",
-                "src": "./Normandie/TERRE 10537-L15.jpg"
-            },
-            {
-                "Titre": "Arrivée du général Leclerc et de son Etat-major sur Utah Beach - 1er aout 1944",
-                "ref": "TERRE 10537-G5",
-                "Date": "1er aout 1944",
-                "Lieu": "Utah Beach, Saint-Martin-de-Varreville (Manche, Basse-Normandie, France)",
-                "Auteur": "Inconnu (photographe du Signal Corps américain)",
-                "Source": "Fonds de l'ECPAD - Service de production cinématographique et photographique, 2e Guerre mondiale",
-                "Description": "Le 1er aout 1944, vers 11h, le général de division Philippe Leclerc de Hauteclocque, commandant la 2e division blindée (2e DB), débarque sur la plage d'Utah Beach, à Saint-Martin-de-Varreville. Il est accueilli par des éléments de la IIIe armée américaine. À ses c\u00f4tés se trouvent son aide de camp, le capitaine Christian Girard, et, sur sa droite, le lieutenant-colonel Répiton-Préneuf. L'événement est largement couvert par les photographes et cameramen américains du Signal Corps.",
-                "src": "./Normandie/TERRE 10537-G5.jpg"
-            }
-        ],
-        "video": {
-            "ref": "SA 931", 
-            "description": "Débarquement à Caen.", 
-            "src": "./Normandie/caen_video.mp4"
-        }  
-    },
-
     "Provence": {
         "periodeDescription" : "Débarquement de Provence (Opération Dragoon) : Bouleversement stratégique : l’opération clé de la Libération Initialement prévue en Juin 1944 avec l’opération Overloard sur les côtes normandes, l'opération Dragoon démarre avec deux mois de retard, le 15 Août 1944. Le commandement général de l'opération est assuré par le général américain Alexander Patch, tandis que les forces françaises, majoritairement issues de colonies ou d’Algérie, sont dirigées par le général Jean de Lattre de Tassigny .​ Au total, 350 000 soldats alliés, dont 230 000 français, vont combattre les troupes allemandes. Les pertes alliées s'élèvent à environ 7 000 hommes (tués, blessés et disparus), tandis que les pertes allemandes sont estimées à environ 10 000 tués, 25 000 blessés et 130 000 prisonniers . De par sa position stratégique, cette opération permet une avancée rapide vers le Nord, dans les Vosges et en Alsace, aboutissant ainsi à la Libération de tout le territoire.",
         "date" : "15 août 1944",
         "lien" : "https://www.defense.gouv.fr/ministere/dossiers-evenementiels-thematiques-du-ministere-armees/1944-france-liberee?",
         "images" :[
+            {
+                "Titre": "Préparatifs du débarquement en Provence",
+                "ref": "TERRE-317-7550.jpg", 
+                "Date": "4 - 16 Août 1944",
+                "Lieu": "Nalpes - Italie",
+                "Auteur": "Robert AUCLAIRE",
+                "Source": "Fonds de l'ECPAD - Service de production cinématographique et photographique (1936-1946)",
+                "Description": "Dans la baie de Naples, des soldats du 1er corps d’armée français se tiennent prêts à embarquer pour la France. Rassemblés sous un soleil d’août 1944, ils s’apprêtent à participer au débarquement allié sur les côtes de Provence, une étape décisive vers la libération du pays.",
+                "src": "./Pronvence/TERRE-317-7550.jpg"
+            },
+            {
+                "Titre": "Tirailleurs sénégalais sur le pont de transport.",
+                "ref": "TERRE 264-5917", 
+                "Date": "13 - 16 Août 1944",
+                "Lieu": "Méditerranée",
+                "Auteur": "Inconnu",
+                "Source": "Fonds de l'ECPAD - Service de production cinématographique et photographique (1936-1946)",
+                "Description": "Tirailleurs du 8e régiment de tirailleurs sénégalais (rattaché à la 3e DIA pour la traversée) accoudés au bastingage du paquebot polonais transport de troupes M.S. (Motors ship) Batory qui se dirige vers les côtes provençales.",
+                "src": "./Pronvence/TERRE 264-5917.svg"
+            },
+            {
+                "Titre": "Le général d'armée Jean de Lattre de Tassigny.",
+                "ref": "TERRE 264-5921", 
+                "Date": "13 - 16 Août 1944",
+                "Lieu": "Méditerranée",
+                "Auteur": "Inconnu",
+                "Source": "Fonds de l'ECPAD - Service de production cinématographique et photographique (1936-1946)",
+                "Description": "Le général d'armée Jean de Lattre de Tassigny, commandant l'armée B, est à bord du paquebot transport de troupes M.S. Batory qui s'approche des côtes de Provence.",
+                "src": "./Pronvence/TERRE 264-5921.svg"
+            },
             {
                 "Titre": "Le chef de gare de la Nartelle dit sa joie aux soldats français.",
                 "ref": "TERRE 262-5887", 
@@ -101,17 +45,7 @@
                 "src": "./Pronvence/TERRE 262-5887.svg"
             },
             {
-                "Titre": "Soldats du 3e RTA après le débarquement",
-                "ref": "TERRE 265-5946", 
-                "Date": "16 Août - 17 Août 1944",
-                "Lieu": "France, Var",
-                "Auteur": "Inconnu",
-                "Source": "Fonds de l'ECPAD - Service de production cinématographique et photographique (1936-1946)",
-                "Description": "Soldats du 3e RTA (régiment de tirailleurs algériens) venant de la plage de la Foux où ils viennent de débarquer. Ils font une pause sur la route (RN 559) avant de prendre la route vers la zone de regroupement située à l'ouest de Cogolin.",
-                "src": "./Pronvence/TERRE 265-5946.svg"
-            },
-            {
-                "Titre": "Débarquement des unités de l'Armée B par chaland LCM à la plage du Foux.",
+                "Titre": "Débarquement de l'Armée B par chaland LCM à la plage du Foux.",
                 "ref": "TERRE 265-5934", 
                 "Date": "16 Août 1944",
                 "Lieu": "Méditerranée",
@@ -122,34 +56,35 @@
             },
             {
                 "Titre": "Soldats du 3e RTA après le débarquement",
+                "ref": "TERRE 265-5946", 
+                "Date": "16 - 17 Août 1944",
+                "Lieu": "France, Var",
+                "Auteur": "Inconnu",
+                "Source": "Fonds de l'ECPAD - Service de production cinématographique et photographique (1936-1946)",
+                "Description": "Soldats du 3e RTA (régiment de tirailleurs algériens) venant de la plage de la Foux où ils viennent de débarquer. Ils font une pause sur la route (RN 559) avant de prendre la route vers la zone de regroupement située à l'ouest de Cogolin.",
+                "src": "./Pronvence/TERRE 265-5946.svg"
+            },
+            {
+                "Titre": "Débarquement des tirailleurs algériens à la Foux en route vers Cogolin",
                 "ref": "TERRE 265-5938", 
-                "Date": "16 Août - 17 Août",
+                "Date": "16 - 17 Août 1944",
                 "Lieu": "France, Var, Cogolin",
                 "Auteur": "Inconnu",
                 "Source": "Fonds de l'ECPAD - Service de production cinématographique et photographique (1936-1946)",
-                "Description": "Soldats du 3e RTA (régiment de tirailleurs algériens) venant de la plage de la Foux où ils viennent de débarquer. Traversant la voie ferrée de Provence, ils s'acheminent vers leur lieu de rassemblement près de Cogolin.",
+                "Description": "En provenance de la plage de la Foux, où ils viennent de débarquer, des tirailleurs du 3e régiment de tirailleurs algériens de la 3e division d'infanterie algérienne empruntent la RN 599, en direction de leur lieu de rassemblement près de Cogolin.",
                 "src": "./Pronvence/TERRE 265-5938.svg"
-            },
-            {
-                "Titre": "Tirailleurs sénégalais sur le pont de transport.",
-                "ref": "TERRE 264-5917", 
-                "Date": "13 Août - 16 Août 1944",
-                "Lieu": "Méditerranée",
-                "Auteur": "Inconnu",
-                "Source": "Fonds de l'ECPAD - Service de production cinématographique et photographique (1936-1946)",
-                "Description": "Tirailleurs du 8e régiment de tirailleurs sénégalais (rattaché à la 3e DIA pour la traversée) accoudés au bastingage du paquebot polonais transport de troupes M.S. (Motors ship) Batory qui se dirige vers les côtes provençales.",
-                "src": "./Pronvence/TERRE 264-5917.svg"
-            },
-            {
-                "Titre": "Le général d'armée Jean de Lattre de Tassigny, commandant l'Armée B, à bord du paquebot transport de troupes M.S. Batory.",
-                "ref": "TERRE 264-5921", 
-                "Date": "13 Août - 16 Août",
-                "Lieu": "Méditerranée",
-                "Auteur": "Inconnu",
-                "Source": "Fonds de l'ECPAD - Service de production cinématographique et photographique (1936-1946)",
-                "Description": "Le général d'armée Jean de Lattre de Tassigny, commandant l'armée B, est à bord du paquebot transport de troupes M.S. Batory qui s'approche des côtes de Provence.",
-                "src": "./Pronvence/TERRE 264-5921.svg"
             }
-        ]
+        ],
+        "video": { 
+            "Titre": "Débarquement de Provence – Août 1944 | Archives ECPAD",
+            "Date": "13 – 17 août 1944",
+            "Lieu": "Méditerranée – Provence (France), principalement La Foux, Grimaud, Cogolin, département du Var",
+            "Auteur": "Inconnu",
+            "Source": "Fonds de l'ECPAD - Service de production cinématographique et photographique (1936-1946)",
+            "Description": "Ce film d’archives retrace les moments clés du débarquement de Provence en août 1944, une opération militaire stratégique menée par les forces alliées pour libérer le sud de la France de l’occupation allemande. On y voit les troupes françaises (notamment les tirailleurs sénégalais et algériens) embarquer sur le paquebot polonais M.S. Batory, puis débarquer sur les plages varoises comme la Foux. Des scènes montrent ensuite leur progression à pied, en jeep ou en convois, vers Cogolin et les zones de rassemblement, dans une atmosphère de détermination et de fraternité. Un témoignage visuel fort sur la diversité des forces engagées et la complexité logistique d'une opération majeure de la Seconde Guerre mondiale.", 
+            "src": "./Pronvence/FilmECPAD-DebarquementdeProvence.mp4"
+        }  
     }
+
+    
 }

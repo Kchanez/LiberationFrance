@@ -9,9 +9,19 @@ margin: 0px;
 background-repeat: no-repeat;
 background-size:  100% 100%;
 position: fixed;
-
 overflow: hidden;
 }
+.line {
+position: fixed; 
+top: 5px; 
+left: 3px; 
+width: 100vw; 
+height: 100vh; 
+pointer-events: none; 
+z-index: 1000;
+transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
 header {
 position: absolute;
 margin: 35px;
@@ -20,76 +30,96 @@ margin: 35px;
 width: 100%;
 min-height: 100px;
 }
+
 .carte {
 position: relative;
-min-width: 100%;
-height: 100%;
-}
-.carteFr {
 width: 100%;
 height: 100%;
-} 
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+}
+
+.carteFr {
+height: 100%;
+width: 100%;
+object-fit: contain;
+user-select: none;
+position: relative;
+top: -40px;
+}
 .Barre {
 position: absolute;
 right: 4%;
 top: 30%;
 border-right: 4px solid #C9C9C9;
 margin-right: 40px;
-padding-right: 60px;
-min-height: 1730px;
+padding-right: 40px;
+min-height: 870px;
 display: flex;
 flex-direction: column;
 align-items: flex-end;
 justify-content: space-between;
 transition: transform 0.5s ease;
 transform-origin: top;
+z-index: 999;
+
 }
 .Barre.scrolled {
-    transform: translateY(-50%);
+transform: translateY(-50%);
 }
 .event {
 cursor: pointer; 
 position: relative;
 transition: transform 0.3s ease, background-color 0.3s ease;
-margin: 0px 20px 40px 0px;
+margin: 0px;
 text-align: right;
 width: 100%;
 max-width: 500px;
-}
+} 
+
 .event::before {
 content: '';
 position: absolute;
 top: 0;
-right: -100px;
+right: -64px;
 width: 42px;
 height: 42px;
 background-color: #C9C9C9;
 border-radius: 12px; 
 transition: background-color 0.3s ease;
 } 
-.date {
-font-size: 17px;
+.description{
+font-family: 'Playfair Display';
+font-size: 18px;
 color: #000;
+font-style: medium;
 }
 
-.description {
-padding: 0px 0px 16px;
+.date {
+padding: 0px 0px 5px;
 border-radius: 8px;
-font-size: 30px;
-font-weight: 500;
+font-size: 13.5px;
 transition: color 0.3s ease;
+font-family: 'Montserrat';
+font-style: light;
 }
 
 .event.active {
 transform: scale(1.05);
 }
 .event.active::before {
-/* background-color: #C61A0B; */
-background-color: #367293;
+background-color: #CD4747; 
 }
+.event.active .date {
+color: #CD4747;
+font-weight: 700;
+font-size: 30px;
+}
+
 .event.active .description {
-/* color: #C61A0B; */
-color: #367293;
+font-size: 25px;
 }
 
 .selected-year {
@@ -100,19 +130,18 @@ padding: 5px;
 
 .timeline {
 position: absolute;
-left: 5%;
-top: 12%;
-width: 200px;
-height: 100vh;
+left: 3%;
+top: 0%;
+width: 8%;
 color: white;
 display: none;
 flex-direction: column;
 align-items: center;
-padding-top: 25px;
-text-align: center;
+z-index: 999;
 }
 .timeline .image-container {
-height: 20vh;
+width: 100%;
+font-family: 'Montserrat';
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -120,11 +149,16 @@ text-align: left;
 }
 .timeline img {
 width: 100%;
-margin: 10px 0;
+margin: 5px 0px 10px 0;
 border-radius: 5px;
 cursor: pointer;
 }
-
+.timeline #timeline-content {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
 .timeline .image-container p {
 color: black;
 font-size: 14px;
@@ -134,38 +168,38 @@ margin-top: 5px;
 color: black;
 position: absolute;
 top: 0%;
-right: 0%;
+right: -20%;
 cursor: pointer;
 font-size: 30px;
 }
 .popup {
 display: none;
 height: fit-content;
-width: 552px;
+width: 760px;
 position: absolute;
 top:210px;
 left: 350px;
-background-color: rgba(0, 0, 0, 0.7);
+background-color: rgba(54, 114, 147, 0.8);
 text-align: left;
 color: white;
 cursor: pointer;
 touch-action: none;  
 user-select: none;   
-cursor: move; 
+cursor: pointer; 
 } 
 .popup img {
 width: 100%;
 border-radius: 5px;
 }
 .popup .close-popup {
-width : 49px;
+width: 49px;
 height: 58px;
 cursor: pointer;
-color: rgb(255, 255, 255);
+color: rgb(255 255 255 / 80%);
 font-size: 100px;
 position: absolute;
-top: 0%;
-right: 15px;
+top: -4%;
+left: 2%;
 z-index: 2;
 }
 .popup h3 ,  .popup p {
@@ -173,24 +207,41 @@ padding: 10px 20px;
 /* pointer-events: none; */
 }
 .popup h3 {
-    font-size: 16px;
-    padding: 10px 20px 0px 20px;
-    margin-bottom: 0px;
-    font-weight: medium;
-    font-style: italic;
+font-size: 16px;
+padding: 10px 20px 0px 20px;
+margin-bottom: 0px;
+font-weight: medium;
+font-style: italic;
 }
 .popup .p1 {
-    font-size: 12px;
-    padding: 0px 20px;
-    margin:5px;
-    font-weight: medium;
-    font-style: italic;
+font-size: 12px;
+padding: 0px 20px;
+margin:5px;
+font-weight: medium;
+font-style: italic;
 }
 .popup .p2 {
-    font-size: 13px;
+font-size: 13px;
 }
 .popup .p3 {
-    font-size: 10px;
+font-size: 10px;
+}
+.popup-left {
+flex: 1;
+max-width: 50%;
+}
+
+.popup-right {
+flex: 1;
+position: relative;
+padding-left: 10px;
+}
+
+.popup-left img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 5px 0 0 5px;
 }
 svg {
 position: absolute;
@@ -201,18 +252,17 @@ z-index: 1;
 .popup-overlay {
 display: none;
 position:  absolute;
-top: 529px;
-left: 1400px;
+top: 1%;
+left: 75%;
 max-width: 350px; 
-min-height: 259.81px;
-background-color: rgba(0, 0, 0, 0.7);
+background-color: rgba(54, 114, 147, 0.8);
 justify-content: center;
 align-items: center;
 z-index: 1000;
 }
 .popup-content {
 color: white;
-padding: 30px;
+padding: 10px  30px;
 border-radius: 10px;
 max-width: 100%;
 text-align: left;

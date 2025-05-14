@@ -11,28 +11,32 @@ function createPopup(imageSrc, titre, text) {
             if (imageData) break;
         }
     }
-
+    //structure du popup
     newPopup.innerHTML = `
+    <div class="popup-left">
         <img src="${imageSrc}" alt="Zoomed Image">
-        <span class="close-popup" onclick="this.parentElement.remove()">&times;</span>
+        <span class="close-popup" onclick="this.parentElement.parentElement.remove()">&times;</span>
+    </div>
+    <div class="popup-right">
         <h3>${titre} - ${imageData?.Date || 'Non spécifiée'} </h3>
         <p class="p1"> ${imageData?.Lieu || 'Non spécifié'} </p>
-
         <p class="p2">${text}</p>
-        
         <div class="image-details">
             <p class="p3"> ©  ${imageData?.Auteur || 'Non spécifié'} /ECPAD/Défense/ ${imageData?.ref || 'Non spécifiée'} <br>
-                ${imageData?.Source || 'Non spécifiée'} <br> 
-                © ECPAD / Ministère des Armées 
-            </p>        
+                ${imageData?.Source || 'Non spécifiée'} <br>
+                © ECPAD / Ministère des Armées
+            </p>
         </div>
+    </div>
     `;
-    
     document.body.appendChild(newPopup);
-    newPopup.style.display = 'block';
+    newPopup.style.display = 'flex';
     newPopup.style.position = 'absolute';
     newPopup.style.zIndex = 1000;
-    
+
+
+
+
     // Calculate random position within viewport bounds
     const maxX = window.innerWidth - newPopup.offsetWidth;
     const maxY = window.innerHeight - newPopup.offsetHeight;
